@@ -49,8 +49,8 @@ const StyledWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 35px;
-  height: 35px;
-  margin-bottom: 3px;
+  height: 36px;
+  margin-bottom: 5px;
   border-radius: 15px;
   background-color: rgb(255, 95, 95);
   cursor: pointer;

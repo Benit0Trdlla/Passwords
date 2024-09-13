@@ -4,7 +4,7 @@ const Input = () => {
     return (
         <StyledWrapper>
             <div className="container">
-                <input required type="text" name="text" className="input" />
+                <input required type="text" name="text" className="input" onChange={(e) => {console.log(e.target.value)}} />
                 <label className="label">Ingresa una palabra</label>
             </div>
         </StyledWrapper>

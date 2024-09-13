@@ -31,7 +31,7 @@ const Checkbox = ({ children }) => {
         </label>
       </StyledWrapper>
       <div className="w-50 text-start">
-        {!checked ? children : <small>Google</small>}
+        {!checked ? children : <small>bobygattos4</small>}
       </div>
     </>
   );
