@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const LinkedInButton = () => {
+export const LinkedInButton = () => {
   return (
     <StyledWrapper>
       <a href="https://www.linkedin.com/in/benitotridelladolce/" target="_blank">
@@ -18,7 +18,6 @@ const LinkedInButton = () => {
           <span>LinkedIn</span>
         </button>
       </a>
-
     </StyledWrapper>
   );
 };
@@ -79,5 +78,3 @@ button:hover::before {
 }
 
 `;
-
-export default LinkedInButton;

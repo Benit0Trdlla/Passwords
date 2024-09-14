@@ -1,16 +1,9 @@
-import './App.css'
 import { useState } from 'react'
-import Button from './components/Button'
-import Input from './components/Input'
-import Switch from './components/Switch'
-import LinkedInButton from './components/socials/Linkedin'
-import GithubButton from './components/socials/Github'
-import CopyBtn from './components/CopyBtn'
-import DeleteBtn from './components/DeleteBtn'
-import Checkbox from './components/Checkbox'
-import SaveBtn from './components/SaveBtn'
+import { SocialsSection, GithubButton, LinkedInButton, Button, Checkbox, Switch, Input, CopyBtn, DeleteBtn, SaveBtn } from './components'
+import './App.css'
+
 function App() {
-  const [automatico, setAutomatico] = useState(false);
+  const [automatico, setAutomatico] = useState(true);
   const [personalizado, setPersonalizado] = useState(false);
 
   const handleChechbox = (e) => {
@@ -48,25 +41,20 @@ function App() {
                   <Switch name="personalizado" state={personalizado} onChange={handleChechbox} />
                   <span>Personalizar la contraseña</span>
                 </div>
-                <div className='pt-3 me-3 me-lg-0'>
-                  <div className='d-flex justify-content-center align-items-center gap-3 '>
-                    <Input />
+                <div className='pt-3 me-1 me-lg-0 me-lg-0'>
+                  <div className='d-flex justify-content-center align-items-center gap-3'>
+                    <Input stateSwitch={automatico} />
                     <Button />
                   </div>
                   <div className='mt-3 d-flex justify-content-center align-items-center gap-1'>
-                    <p className='m-0 mb-2 w-50 text-center'>Contrase;a generada: 1111111111111111 </p>
+                    <p className='m-0 mb-2 w-50 text-center me-2'>Contrase;a generada: 1111111111111111 </p>
                     <CopyBtn />
                     <SaveBtn />
                   </div>
                 </div>
               </div>
             </div>
-            <div className='order-3 mt-3 d-flex justify-content-center align-items-center  mb-lg-0 w-50 mx-auto'>
-              <div className='d-flex justify-content-center gap-4 me-0 me-lg-3'>
-                <LinkedInButton />
-                <GithubButton />
-              </div>
-            </div>
+            <SocialsSection />
             <div className="col-md-6 px-0 p-0 px-lg-2">
               <div className='mt-2 mt-lg-0 h-100'>
                 <div className='px-3'>

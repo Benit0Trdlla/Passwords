@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const GithubButton = () => {
+export const GithubButton = () => {
   return (
     <StyledWrapper>
       <a href="https://github.com/Benit0Trdlla" target="_blank">
@@ -19,13 +19,11 @@ const GithubButton = () => {
           <span>Github</span>
         </button>
       </a>
-
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
-/* From Uiverse.io by Mangesh636 */ 
 a {
   text-decoration: none;
 }
@@ -81,4 +79,3 @@ button:hover::before {
 
 `;
 
-export default GithubButton;
