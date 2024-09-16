@@ -10,11 +10,16 @@ export const RightColumn = () => {
 
     const [password, setPassword] = useState('');
 
-    const handleChechbox = (e) => {
+    const handleCheckbox = (e) => {
         const { name } = e.target;
         setAutomatico(name === 'automatico');
         setPersonalizado(name !== 'automatico');
         setPassword('')
+    };
+    const handleGeneratePassword = () => {
+        const result = generatePassword(inputValue, 16, automatico);
+        if (result instanceof Error) console.error(result.message);
+        else setPassword(result);
     };
 
     return (
@@ -23,25 +28,29 @@ export const RightColumn = () => {
                 <hr />
             </div>
             <div className="p-3">
-                <div className='d-flex justify-content-center align-items-center gap-2 mb-2'>
-                    <Switch name="automatico" state={automatico} onChange={handleChechbox} />
+                <div className='d-flex justify-content-center align-items-center gap-2 mb-3'>
+                    <Switch name="automatico" state={automatico} onChange={handleCheckbox} />
                     <span>Generar automaticamente</span>
                 </div>
                 <div className='d-flex justify-content-center align-items-center gap-2 mb-3'>
-                    <Switch name="personalizado" state={personalizado} onChange={handleChechbox} />
+                    <Switch name="personalizado" state={personalizado} onChange={handleCheckbox} />
                     <span>Personalizar la contraseña</span>
                 </div>
                 <div className='pt-3 me-1 me-lg-0 me-lg-0'>
                     <div className='d-flex justify-content-center align-items-center gap-3'>
                         <Input stateSwitch={automatico} onChange={(e) => setInputValue(e.target.value)} inputValue={inputValue} />
-                        <Button onClick={() => setPassword(generatePassword(inputValue, 16, automatico))} />
+                        <Button onClick={handleGeneratePassword} />
                     </div>
                     <div className='mt-4 pt-1 d-flex justify-content-center align-items-center gap-1'>
-                        <p className='m-0 mb-2 w-50 text-center me-2'>
-                            Contraseña generada: {!password ? '...' : password}
-                        </p>
-                        <CopyBtn />
-                        <SaveBtn />
+                        {password &&
+                            <>
+                                <p className='m-0 mb-2 w-50 text-center me-2'>
+                                    Contraseña generada: {password}
+                                </p>
+                                <CopyBtn password={password}/>
+                                <SaveBtn />
+                            </>
+                        }
                     </div>
                 </div>
             </div>

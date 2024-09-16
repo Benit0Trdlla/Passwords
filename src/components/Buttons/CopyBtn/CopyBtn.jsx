@@ -1,11 +1,12 @@
 import "./CopyBtn.css";
-export const CopyBtn = () => {
+
+export const CopyBtn = ({ password }) => {
   return (
-    <button className="copy mt-lg-0 mb-1">
+    <button className="copy mt-lg-0 mb-1" onClick={() => navigator.clipboard.writeText(password)}>
       <span
         className="tooltip"
-        data-text-initial="Copy to clipboard"
-        data-text-end="Copied!"
+        data-text-initial="Copiar al portapapeles"
+        data-text-end="Copiado!"
       />
       <span>
         <svg

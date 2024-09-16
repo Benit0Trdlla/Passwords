@@ -75,6 +75,4 @@ button:hover {
 
 button:hover::before {
   box-shadow: inset 0 0 0 10em rgb(0, 119, 181);
-}
-
-`;
+}`;
