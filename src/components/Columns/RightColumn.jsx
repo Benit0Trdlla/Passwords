@@ -1,14 +1,17 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Switch, Button, Input, CopyBtn, SaveBtn } from "../../components"
 import { generatePassword } from "../../lib/generatePassword";
+import { PasswordContext } from "../../contexts/password-context";
+
 
 export const RightColumn = () => {
+    const { password, setPassword } = useContext(PasswordContext);
+
     const [automatico, setAutomatico] = useState(true);
     const [personalizado, setPersonalizado] = useState(false);
 
     const [inputValue, setInputValue] = useState('');
 
-    const [password, setPassword] = useState('');
 
     const handleCheckbox = (e) => {
         const { name } = e.target;
@@ -47,7 +50,7 @@ export const RightColumn = () => {
                                 <p className='m-0 mb-2 w-50 text-center me-2'>
                                     Contraseña generada: {password}
                                 </p>
-                                <CopyBtn password={password}/>
+                                <CopyBtn />
                                 <SaveBtn />
                             </>
                         }
