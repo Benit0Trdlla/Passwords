@@ -1,9 +1,11 @@
 export const saveLocalStorage = (key, value) => {
-    try {
-        if (key.trim() === " ") return new Error('La clave no puede estar vacía');
-        if (value.trim() === " ") return new Error('El valor no puede estar vacío');
-        localStorage.setItem(key, value);
-    } catch (error) {
-        return new Error(`Error al guardar en almacenamiento local: ${error.message}`);
-    }
+        if (key.trim() === "") return new Error('Ingresa el nombre del sitio web, por favor 😉');
+        if (value.trim() === "") return new Error('La contraseña no puede estar vacía');
+
+        const generatedPasswords = JSON.parse(localStorage.getItem('Passwords')) || [];
+        generatedPasswords.push({
+                key,
+                value
+        });
+        localStorage.setItem('Passwords', JSON.stringify(generatedPasswords));
 }
