@@ -14,16 +14,17 @@ export const RightColumn = () => {
     const [inputValue, setInputValue] = useState('');
 
     const handleCheckbox = (e) => {
-        const { name } = e.target;
-        setAutomatico(name === 'automatico');
-        setPersonalizado(name !== 'automatico');
+        const isAutomatico = e.target.name === 'automatico';
+        setAutomatico(isAutomatico);
+        setPersonalizado(!isAutomatico);
         setErrorMessage('');
-        setPassword('')
+        setPassword('');
+        setInputValue('');
     };
     const handleGeneratePassword = () => {
         const result = generatePassword(inputValue, 16, automatico);
         if (result instanceof Error) setErrorMessage(result.message);
-        else setPassword(result);
+        else { setPassword(result); setInputValue(''); }
     };
 
     return (
