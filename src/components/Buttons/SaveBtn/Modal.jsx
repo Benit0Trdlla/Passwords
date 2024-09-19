@@ -1,9 +1,12 @@
 import { useState, useContext } from 'react'
 import { PasswordContext } from '../../../contexts/password-context';
+import { SavedContext } from '../../../contexts/saved-context';
 import { saveLocalStorage } from '../../../lib/saveLocalStorage';
 export const Modal = () => {
     const { password } = useContext(PasswordContext);
     const [websiteName, setWebsiteName] = useState("");
+    
+    const { setSaved } = useContext(SavedContext);
 
     const [stateAlert, setStateAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
@@ -12,8 +15,13 @@ export const Modal = () => {
         const result = saveLocalStorage(websiteName, password);
         if (result instanceof Error) { setAlertMessage(result.message); }
         else { setStateAlert(true); setAlertMessage("Datos guardados correctamente 👍"); }
+        setSaved(true);
+        setTimeout(() => {
+            setSaved(false);
+        }, 500);
         setWebsiteName('');
     }
+
 
     return (
         <div className="modal fade" id="saveModal" tabIndex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">

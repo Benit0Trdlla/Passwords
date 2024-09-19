@@ -1,5 +1,6 @@
 import { SocialsSection, RightColumn, LeftColumn } from './components'
 import PasswordContextProvider from './contexts/password-context'
+import SavedPasswordContextProvider from './contexts/saved-context'
 import './App.css'
 
 function App() {
@@ -18,10 +19,12 @@ function App() {
           </div>
           <div className="row">
             <PasswordContextProvider>
-              <RightColumn />
+              <SavedPasswordContextProvider>
+                <RightColumn />
+                <SocialsSection />
+                <LeftColumn />
+              </SavedPasswordContextProvider>
             </PasswordContextProvider>
-              <SocialsSection />
-              <LeftColumn />
           </div>
         </div>
       </div>

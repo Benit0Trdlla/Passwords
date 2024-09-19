@@ -1,8 +1,20 @@
 import "./DeleteBtn.css";
+import { useContext } from "react";
 import { deletePassword } from "../../../lib/deletePassword";
+import { SavedContext } from "../../../contexts/saved-context";
+
+// eslint-disable-next-line react/prop-types
 export const DeleteBtn = ({ index }) => {
+  const { setSaved } = useContext(SavedContext);
+  const handleDelete = (index) => {
+    deletePassword(index);
+    setSaved(true)
+    setTimeout(() => {
+      setSaved(false);
+    }, 500);
+  }
   return (
-    <button className="bin-button" onClick={() => deletePassword(index)}>
+    <button className="bin-button" onClick={() => handleDelete(index)}>
       <svg
         className="bin-top"
         viewBox="0 0 39 7"
