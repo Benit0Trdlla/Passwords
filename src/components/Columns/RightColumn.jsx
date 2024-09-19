@@ -50,7 +50,7 @@ export const RightColumn = () => {
                         {password &&
                             <>
                                 <p className='m-0 mb-2 w-50 text-center me-2'>Contraseña generada: {password}</p>
-                                <CopyBtn onClick={() => navigator.clipboard.writeText(password)} />
+                                <CopyBtn clipboardValue={password} />
                                 <SaveBtn />
                             </>
                         }

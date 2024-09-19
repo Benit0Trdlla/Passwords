@@ -1,7 +1,8 @@
 import "./DeleteBtn.css";
-export const DeleteBtn = () => {
+import { deletePassword } from "../../../lib/deletePassword";
+export const DeleteBtn = ({ index }) => {
   return (
-    <button className="bin-button">
+    <button className="bin-button" onClick={() => deletePassword(index)}>
       <svg
         className="bin-top"
         viewBox="0 0 39 7"

@@ -19,9 +19,9 @@ function App() {
           <div className="row">
             <PasswordContextProvider>
               <RightColumn />
+            </PasswordContextProvider>
               <SocialsSection />
               <LeftColumn />
-            </PasswordContextProvider>
           </div>
         </div>
       </div>

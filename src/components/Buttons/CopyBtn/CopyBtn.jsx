@@ -1,11 +1,8 @@
 import "./CopyBtn.css";
-// import { useContext } from "react"
-// import { PasswordContext } from "../../../contexts/password-context";
 
-export const CopyBtn = ({onClick}) => {
-  // const { password } = useContext(PasswordContext);
+export const CopyBtn = ({clipboardValue}) => {
   return (
-    <button className="copy mt-lg-0 mb-1" onClick={onClick}>
+    <button className="copy mt-lg-0 mb-1" onClick={() => navigator.clipboard.writeText(clipboardValue)}>
       <span
         className="tooltip"
         data-text-initial="Copiar al portapapeles"
