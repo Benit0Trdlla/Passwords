@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Checkbox.css";
 
-export const Checkbox = ({ children }) => {
+export const Checkbox = ({ children, websiteName }) => {
   const [checked, setChecked] = useState(false);
   const handleChange = () => {
     setChecked(!checked);
@@ -28,7 +28,7 @@ export const Checkbox = ({ children }) => {
           </svg>
         </label>
       <div className="w-50 text-start">
-        {!checked ? children : <small>bobygattos4</small>}
+        {!checked ? children : <small>{websiteName}</small>}
       </div>
     </>
   );
