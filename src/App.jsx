@@ -1,5 +1,5 @@
-import {RightColumn, LeftColumn } from './components'
-import {SocialsSection} from './components/socials/SocialsSection'
+import { RightColumn, LeftColumn } from './components'
+// import { SocialsSection } from './components/socials/SocialsSection'
 import PasswordContextProvider from './contexts/password-context'
 import SavedPasswordContextProvider from './contexts/saved-context'
 import './App.css'
@@ -22,7 +22,7 @@ function App() {
             <PasswordContextProvider>
               <SavedPasswordContextProvider>
                 <RightColumn />
-                <SocialsSection />
+                {/* <SocialsSection /> */}
                 <LeftColumn />
               </SavedPasswordContextProvider>
             </PasswordContextProvider>
