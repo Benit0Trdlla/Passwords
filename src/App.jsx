@@ -1,4 +1,5 @@
-import { SocialsSection, RightColumn, LeftColumn } from './components'
+import {RightColumn, LeftColumn } from './components'
+import {SocialsSection} from './components/socials/SocialsSection'
 import PasswordContextProvider from './contexts/password-context'
 import SavedPasswordContextProvider from './contexts/saved-context'
 import './App.css'
