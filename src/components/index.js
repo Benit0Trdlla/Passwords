@@ -1,6 +1,6 @@
 // export * from "./socials/Github.jsx"
 // export * from "./socials/Linkedin.jsx"
-// export * from "./socials/SocialsSection.jsx"
+export * from "./Socials/SocialsSection.jsx"
 
 export * from "./Buttons/Button.jsx"
 export * from "./Buttons/CopyBtn/CopyBtn.jsx"

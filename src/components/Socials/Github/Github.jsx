@@ -1,10 +1,10 @@
-import styled from "styled-components";
-
+// import styled from "styled-components";
+import "./Github.css";
 export const GithubButton = () => {
   return (
-    <StyledWrapper>
+    // <StyledWrapper>
       <a href="https://github.com/Benit0Trdlla" target="_blank">
-        <button href="https://github.com/IsraelVillegas">
+        <button className="btn-github" href="https://github.com/IsraelVillegas">
           <svg
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -19,61 +19,61 @@ export const GithubButton = () => {
           <span>Github</span>
         </button>
       </a>
-    </StyledWrapper>
+    // </StyledWrapper>
   );
 };
 
-const StyledWrapper = styled.div`
-a {
-  text-decoration: none;
-}
-button {
-  background: transparent;
-  position: relative;
-  padding: 5px 15px;
-  display: flex;
-  align-items: center;
-  font-size: 17px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  border: 1px solid rgb(123, 141, 158);
-  color: rgb(125, 142, 158);
-  border-radius: 25px;
-  outline: none;
-  overflow: hidden;
-  transition: color 0.3s 0.1s ease-out;
-  text-align: center;
-}
+// const StyledWrapper = styled.div`
+// a {
+//   text-decoration: none;
+// }
+// button {
+//   background: transparent;
+//   position: relative;
+//   padding: 5px 15px;
+//   display: flex;
+//   align-items: center;
+//   font-size: 17px;
+//   font-weight: 600;
+//   text-decoration: none;
+//   cursor: pointer;
+//   border: 1px solid rgb(123, 141, 158);
+//   color: rgb(125, 142, 158);
+//   border-radius: 25px;
+//   outline: none;
+//   overflow: hidden;
+//   transition: color 0.3s 0.1s ease-out;
+//   text-align: center;
+// }
 
-button span {
-  margin: 10px;
-}
+// button span {
+//   margin: 10px;
+// }
 
-button::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  content: "";
-  border-radius: 50%;
-  display: block;
-  width: 20em;
-  height: 20em;
-  left: -5em;
-  text-align: center;
-  transition: box-shadow 0.5s ease-out;
-  z-index: -1;
-}
+// button::before {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   margin: auto;
+//   content: "";
+//   border-radius: 50%;
+//   display: block;
+//   width: 20em;
+//   height: 20em;
+//   left: -5em;
+//   text-align: center;
+//   transition: box-shadow 0.5s ease-out;
+//   z-index: -1;
+// }
 
-button:hover {
-  color: #fff;
-  border: 1px solid rgb(36, 41, 46);
-}
+// button:hover {
+//   color: #fff;
+//   border: 1px solid rgb(36, 41, 46);
+// }
 
-button:hover::before {
-  box-shadow: inset 0 0 0 10em rgb(36, 41, 46);
-}`;
+// button:hover::before {
+//   box-shadow: inset 0 0 0 10em rgb(36, 41, 46);
+// }`;
 

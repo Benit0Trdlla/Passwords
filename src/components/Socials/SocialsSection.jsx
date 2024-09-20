@@ -1,5 +1,5 @@
-import { LinkedInButton } from "./Linkedin"
-import { GithubButton } from "./Github"
+import { LinkedInButton } from "./Linkedin/Linkedin"
+import { GithubButton } from "./Github/Github"
 export const SocialsSection = () => {
     return (
         <div className='order-3 p-5 d-flex justify-content-center align-items-center mb-lg-0 w-50 mx-auto'>
