@@ -14,5 +14,5 @@ export * from "./Switch/Switch.jsx"
 export * from "./Input/Input.jsx"
 export * from "./ListPasswords/ListPasswords.jsx"
 
-export * from "./Columns/LeftColumn.jsx"
 export * from "./Columns/RightColumn.jsx"
+export * from "./Columns/LeftColumn.jsx"

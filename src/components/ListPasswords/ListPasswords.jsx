@@ -7,10 +7,16 @@ export const ListPasswords = () => {
     const { save } = useContext(SavedContext);
 
     const [passwords, setPassword] = useState([])
-
-    useEffect(() => {
+    
+    const handleShowNewPasswords = () => {
         const result = readLocalStorage()
         setPassword(result)
+    }
+
+    useEffect(() => {
+        // const result = readLocalStorage()
+        // setPassword(result)
+        handleShowNewPasswords()
     }, [save])
 
     return (

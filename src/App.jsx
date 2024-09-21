@@ -21,9 +21,9 @@ function App() {
           <div className="row">
             <PasswordContextProvider>
               <SavedPasswordContextProvider>
-                <RightColumn />
-                <SocialsSection />
                 <LeftColumn />
+                <SocialsSection />
+                <RightColumn />
               </SavedPasswordContextProvider>
             </PasswordContextProvider>
           </div>
