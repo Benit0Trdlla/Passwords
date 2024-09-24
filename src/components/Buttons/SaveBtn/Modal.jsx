@@ -5,7 +5,7 @@ import { saveLocalStorage } from '../../../lib/saveLocalStorage';
 export const Modal = () => {
     const { password } = useContext(PasswordContext);
     const [websiteName, setWebsiteName] = useState("");
-    
+
     const { setSaved } = useContext(SavedContext);
 
     const [stateAlert, setStateAlert] = useState(false);
@@ -21,7 +21,6 @@ export const Modal = () => {
         }, 500);
         setWebsiteName('');
     }
-
 
     return (
         <div className="modal fade" id="saveModal" tabIndex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">
@@ -42,7 +41,7 @@ export const Modal = () => {
                         </div>
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => setAlertMessage('')}>Cerrar</button>
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => { setAlertMessage(''); setWebsiteName('') }}>Cerrar</button>
                         <button type="button" className="btn btn-primary" onClick={handleSave}>Guardar</button>
                     </div>
                 </div>
