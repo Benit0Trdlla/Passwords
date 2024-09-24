@@ -1,12 +1,10 @@
 import { useState, useContext } from 'react'
-import { PasswordContext } from '../../../contexts/password-context';
-import { SavedContext } from '../../../contexts/saved-context';
 import { saveLocalStorage } from '../../../lib/saveLocalStorage';
+import { PasswordContext, SavedContext } from '../../../contexts';
 export const Modal = () => {
+    const { setSaved } = useContext(SavedContext);
     const { password } = useContext(PasswordContext);
     const [websiteName, setWebsiteName] = useState("");
-
-    const { setSaved } = useContext(SavedContext);
 
     const [stateAlert, setStateAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');

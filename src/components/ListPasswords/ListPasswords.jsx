@@ -1,8 +1,7 @@
 import { Checkbox, CopyBtn, DeleteBtn } from '../../components'
 import { useEffect, useState, useContext } from 'react'
 import { readLocalStorage } from '../../lib/readLocalStorage'
-import { SavedContext } from '../../contexts/saved-context'
-import { IndexPasswordsContext } from '../../contexts/indexPasswords'
+import { SavedContext, IndexPasswordsContext } from '../../contexts'
 
 export const ListPasswords = () => {
     const { save } = useContext(SavedContext);
