@@ -14,7 +14,7 @@ export const Modal = () => {
 
     const handleDelete = (passedIndex) => {
         if (textInput !== CONFIRMATION_TEXT) {
-            setAlertMessage(`Error: ingresa el texto correcto (${CONFIRMATION_TEXT}).`);
+            setAlertMessage(`Ingresa el texto correcto (${CONFIRMATION_TEXT}).`);
             setStateAlert(false);
             return
         }
@@ -22,11 +22,13 @@ export const Modal = () => {
         deletePassword(passedIndex);
         setAlertMessage('Eliminado correctamente 👍');
         setStateAlert(true);
+    }
 
-        setSaved(true)
+    const hadleSaved = () => {
+        setSaved(true);
         setTimeout(() => {
             setSaved(false);
-        }, 500);
+        }, 1500);
     }
     return (
         <div className="modal fade" id="deleteModal" tabIndex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -44,8 +46,8 @@ export const Modal = () => {
                         </div>
                     </div>
                     <div className="modal-footer border-top border-danger">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => { setAlertMessage(''); setTextInput('') }}>Cerrar</button>
-                        <button type="button" className="btn btn-danger" onClick={() => { handleDelete(indexPasswords); setTextInput('') }}>Eliminar</button>
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={hadleSaved}>Cerrar</button>
+                        <button type="button" className="btn btn-danger" onClick={() => { handleDelete(indexPasswords); }}>Eliminar</button>
                     </div>
                 </div>
             </div>
