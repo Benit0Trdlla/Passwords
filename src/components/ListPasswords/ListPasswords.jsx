@@ -1,4 +1,4 @@
-import { Checkbox, CopyBtn, DeleteBtn } from '../../components'
+import { Checkbox, CopyBtn, DeleteBtn, AddPassword } from '../../components'
 import { useEffect, useState, useContext } from 'react'
 import { readLocalStorage } from '../../lib/readLocalStorage'
 import { SavedContext, IndexPasswordsContext } from '../../contexts'
@@ -25,7 +25,9 @@ export const ListPasswords = () => {
     return (
         <>
             <ul className="list-group list-group-flush text-start w-80 px-3 ms-3">
-                {passwords.length === 0 && <p className="text-danger text-center">No hay contraseñas guardadas, por favor ingresa una 🙂</p>}
+                {passwords.length === 0 &&
+                    <AddPassword />
+                }
                 {passwords.map((item, index) => (
                     <li className="list-group-item d-flexr" key={index}>
                         <div className='fw-bold d-flex justify-content-between'>
