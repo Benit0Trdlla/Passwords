@@ -1,8 +1,10 @@
 import "./AddBtn.css"
+import { Modal } from "../../AddPassword/Modal"
 export const AddBtn = () => {
     return (
-        <button type="button" className="add-button">
-            <span className="button__text">Add</span>
+        <>
+        <button type="button" className="add-button" data-bs-toggle="modal" data-bs-target="#addModal">
+            <span className="button__text">Añadir</span>
             <span className="button__icon">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -21,5 +23,8 @@ export const AddBtn = () => {
                 </svg>
             </span>
         </button>
+        
+        <Modal />
+        </>
     )
 }
