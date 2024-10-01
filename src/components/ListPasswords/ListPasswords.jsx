@@ -29,7 +29,7 @@ export const ListPasswords = () => {
                     <AddPassword />
                 }
                 {passwords.length > 0 &&
-                    <div className='d-flex justify-content-center'>
+                    <div className='d-flex justify-content-center mb-2'>
                         <AddBtn />
                     </div>
                 }
